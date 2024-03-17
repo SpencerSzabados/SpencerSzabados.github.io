@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: My last name is pronounced 'zza-ba-dosh'.
+subtitle: My last name is pronounced 'sza-ba-dosh'.
 profile:
   align: right
   image: prof_pic.jpg
