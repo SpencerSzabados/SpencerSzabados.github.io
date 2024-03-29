@@ -20,7 +20,7 @@ scholar:
 ---
 
 # Overview
-The impetus for this post came from my personal struggles to find a solid reference and working code demonstration of what so called "noise worms", as I had stumbled a illustration and brief description of them when researching some early (2000's era) procedural generation techniques. The best write up I came across is that given on [libnoise](http://libnoise.sourceforge.net/examples/worms/) from which this post is inspired.
+The impetus for this post came from my personal struggles to find a solid reference and working code demonstration of what are called "noise worms", as I had stumbled upon an illustration and brief description of them when researching some early (2000's era) procedural generation techniques. The best write up I came across is that given on [libnoise](http://libnoise.sourceforge.net/examples/worms/) from which this post is inspired.
 
 _Noise Worms_ are a procedurally generated illustrations of worm like objects, which are composed of joined line segments (polylines) orientated by a noise function, Perlin Noise {% cite Perlin:1989 %} in our case. An example of a collection of noise worms is given below: 
 
@@ -102,7 +102,7 @@ function setup(){
 
 {% include figure.liquid loading="eager" path="assets/img/posts/perlin-worms/perlin_noise_80x80 1.png" class="img-fluid rounded z-depth-1" max-width="400px" center="true" %}
 
-The sharp contrast between cells (pixels) is due to the coarse sampling of grid points. If we were to sample in a more continual sweep across the space we would get smooth boundaries due to the spline interpolation used within the algorithm. The following image illustrates this for a finer grid.
+The sharp contrast between cells (pixels) is due to the coarse sampling of grid points. If we were to sample in a more continual sweep across the space, we would get smooth boundaries due to the spline interpolation used within the algorithm. The following image illustrates this for a finer grid.
 
 ```js
 function setup(){
@@ -123,7 +123,7 @@ function setup(){
 {% include figure.liquid loading="eager" path="assets/img/posts/perlin-worms/perlin_noise_80x80_super.png" class="img-fluid rounded z-depth-1" max-width="400px" center="true" %}
 
 # Constructing the worms
-Given our noise domain (defined above) we can construct the worms. To do this, a _lookup line segment_ is placed within a noise domain (e.g., Perlin Noise is used here as it is gives a coherent space) and used it to perform directional lookups at sample points along its length. These sample points correspond to segments on the worm and are used to orient each relative to the previous segment along the worm.
+Given our noise domain (defined above) we can construct the worms. To do this, a _lookup line segment_ is placed within a noise domain (e.g., Perlin Noise is used here as it gives a coherent space) and used it to perform directional lookups at sample points along its length. These sample points correspond to segments on the worm and are used to orient each relative to the previous segment along the worm.
 
 The following code defines a simple worm class, a sampling segment, and a loop for rendering the worm based on the noise samples drawn form the segment. 
 
@@ -188,14 +188,14 @@ function setup(){
 }
 ```
 
-Here are two examples for the kinds of worms that can be generated using this simple script and method for two different randomly placed segments within the same noise volume. The worm that turn smoothly, that is does not jitter, results from finely divided lookup segment in the noise domain, and vise versa for the worm with a lots of jitter.
+Here are two examples for the kinds of worms that can be generated using this simple script and method for two different randomly placed segments within the same noise volume. The worm that turns smoothly, that is does not jitter, results from a finely divided lookup segment in the noise domain, and vise versa for the worm with a lots of jitter.
 
 As can be seen, generating procedural objects like these is incredibly simple and the method achieves a good amount of diversity in generation. 
 
 {% include figure.liquid loading="eager" path="assets/img/posts/perlin-worms/perlin_worm 2.png" class="img-fluid rounded z-depth-1" max-width="400px" center="true" %}
 {% include figure.liquid loading="eager" path="assets/img/posts/perlin-worms/perlin_worm_smooth 1.png" class="img-fluid rounded z-depth-1" max-width="400px" center="true" %}
 
-This method, which is quit bear bones, can be further modified to generate worms with directional bias to give increasingly varied results.
+This method, which is quite bear bones, can be further modified to generate worms with directional bias to give increasingly varied results.
 
 ```js
 function setup(){
