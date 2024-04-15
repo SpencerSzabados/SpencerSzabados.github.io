@@ -34,6 +34,8 @@
         {% else %}
           <abbr class="badge">{{ entry.abbr }}</abbr>
         {% endif %}
+      {% else %}
+          <abbr class="badge">{{ entry.abbr }}</abbr>
       {% endif %}
     </div>
   {% endif %}
@@ -167,6 +169,9 @@
       {% endif %}
       {% if entry.html %}
         <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button">HTML</a>
+      {% endif %}
+      {% if entry.url %}
+        <a href="{{ entry.url }}" class="btn btn-sm z-depth-0" role="button">URL</a>
       {% endif %}
       {% if entry.pdf %}
         {% if entry.pdf contains '://' %}
