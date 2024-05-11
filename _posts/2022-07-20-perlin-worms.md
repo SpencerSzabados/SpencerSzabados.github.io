@@ -19,15 +19,17 @@ scholar:
     bibliography: references.bib
 ---
 
-# Overview
 The impetus for this post came from my personal struggles to find a solid reference and working code demonstration of what are called "noise worms", as I had stumbled upon an illustration and brief description of them when researching some early (2000's era) procedural generation techniques. The best write up I came across is that given on [libnoise](http://libnoise.sourceforge.net/examples/worms/) from which this post is inspired.
 
+---
+
+# Overview
 _Noise Worms_ are a procedurally generated illustrations of worm like objects, which are composed of joined line segments (polylines) orientated by a noise function, Perlin Noise {% cite Perlin:1989 %} in our case. An example of a collection of noise worms is given below: 
 
 {% include figure.liquid loading="eager" path="assets/img/posts/perlin-worms/perlin_worms_dist_bias_1.png" class="img-fluid rounded z-depth-1" max-width="400px" center="true" %}
 
 # Implementing Perlin noise
-Out of historical interest, we will be using a JavaScript port of Perlin's _Improved noise_ Java reference implementation given in {% cite Perlin:2002 %}.
+Out of historical interest, we will be using a JavaScript port of Perlin's _Improved noise_ Java reference implementation, given in {% cite Perlin:2002 %}, which I implemented using the [p5.js](https://p5js.org/) graphics library.
 
 ```js
 //Port of Ken Perlin's 2002 Java Reference Implementation of Improved Noise
@@ -245,7 +247,7 @@ By implementing different distance bias expressions for $$dx$$ and $$dy$$, respe
 
 
 ## Animating the worms
-Due to Perlin noise being a source of [[Noise functions#^f341a0|coherent noise]], meaning its output changes smoothly and proportionately with small and large changes in input, worms can be smoothly animated by gradually translating their lookup segments within the noise domain and accordingly updating segments along the worms. 
+Due to Perlin noise being a source of coherent noise, meaning its output changes smoothly and proportionately with small and large changes in input, worms can be smoothly animated by gradually translating their lookup segments within the noise domain and accordingly updating segments along the worms. 
 
 The following code animates a singular worm using the simple method proposed above.
 
