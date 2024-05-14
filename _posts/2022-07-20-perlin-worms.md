@@ -127,7 +127,7 @@ function setup(){
 # Constructing the worms
 Given our noise domain (defined above) we can construct the worms. To do this, a _lookup line segment_ is placed within a noise domain (e.g., Perlin Noise is used here as it gives a coherent space) and used it to perform directional lookups at sample points along its length. These sample points correspond to segments on the worm and are used to orient each relative to the previous segment along the worm.
 
-The following code defines a simple worm class, a sampling segment, and a loop for rendering the worm based on the noise samples drawn form the segment. 
+The following code defines a simple worm class, a sampling segment, and a loop for rendering the worm based on the noise samples drawn from the segment. 
 
 ```js
 class Worm{
@@ -190,7 +190,7 @@ function setup(){
 }
 ```
 
-Here are two examples for the kinds of worms that can be generated using this simple script and method for two different randomly placed segments within the same noise volume. The worm that turns smoothly, that is does not jitter, results from a finely divided lookup segment in the noise domain, and vise versa for the worm with a lots of jitter.
+Here are two examples for the kinds of worms that can be generated using this simple script and method for two different randomly placed segments within the same noise volume. The worm that turns smoothly, that is does not jitter, results from a finely divided lookup segment in the noise domain, and vise versa for the worm with lots of jitter.
 
 As can be seen, generating procedural objects like these is incredibly simple and the method achieves a good amount of diversity in generation. 
 
@@ -239,7 +239,7 @@ function setup(){
 {% include figure.liquid loading="eager" path="assets/img/posts/perlin-worms/perlin_worms_3.png" class="img-fluid rounded z-depth-1" max-width="400px" center="true" %}
 
 
-By implementing different distance bias expressions for $$dx$$ and $$dy$$, respectively the displacement in $$x$$ and $$y$$ for a new segment, a wide range of different appearances can be achieved. 
+By implementing different distance bias expressions for $$dx$$ and $$dy$$, respectively the displacement in $$x$$ and $$y$$, a wide range of different appearances can be achieved. 
 
 {% include figure.liquid loading="eager" path="assets/img/posts/perlin-worms/perlin_worms_dist_bias_5.png" class="img-fluid rounded z-depth-1" max-width="400px" center="true" %}
 {% include figure.liquid loading="eager" path="assets/img/posts/perlin-worms/perlin_worms_dist_bias_1.png" class="img-fluid rounded z-depth-1" max-width="400px" center="true" %}

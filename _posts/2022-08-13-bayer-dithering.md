@@ -30,7 +30,7 @@ Next to noise (random) dithering, with simply randomly sample the image and appl
 
 
 # Ordered (Bayer) Dithering 
-Bayer dithering, and ordered dithering in general, makes use of a matrix of threshold values, that are compared to each pixel value in the image to quantize colours. More specifically, for a $$n$$-by-$$n$$ matrix $$T$$, the, $${\rm RBG}$$, colour channel values of each pixel, $${\rm pixel}(x,y)$$, are quantize to $$c$$ values based on the rule: 
+Bayer dithering, and ordered dithering in general, make use of a matrix of threshold values that are compared to each pixel value in the image to quantize colours. More specifically, for a $$n$$-by-$$n$$ matrix $$T$$, the, $${\rm RBG}$$, colour channel values of each pixel, $${\rm pixel}(x,y)$$, are quantized to $$c$$ values based on the rule: 
 
 $$
 \begin{align*}
