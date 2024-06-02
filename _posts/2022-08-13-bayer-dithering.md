@@ -8,7 +8,7 @@ tags:
   - graphics
   - procedural_generation
 
-thumbnail: assets/img/posts/perlin-worms/perlin_worms_dist_bias_5.png
+thumbnail: assets/img/posts/image-dither/mike_c4d8color.png
 
 toc:
     sidebar: true
@@ -121,3 +121,6 @@ The above method performs decently well on a variety of different subjects. As a
 
 {% include figure.liquid loading="eager" path="assets/img/posts/image-dither/mike_c4d8color.png" class="img-fluid rounded z-depth-1" max-width="400px" center="true" %}
 
+And a photo I tool of a hotel during a trip to Hawaii.
+
+{% include figure.liquid loading="eager" path="assets/img/posts/image-dither/dithered_hotel.png" class="img-fluid rounded z-depth-1" max-width="400px" center="true" %}

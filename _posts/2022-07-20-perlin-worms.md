@@ -1,5 +1,5 @@
 ---
-tile: Perlin Worms
+title: Perlin Worms
 doc type: Blog post
 layout: post
 authors: Spencer Szabados
