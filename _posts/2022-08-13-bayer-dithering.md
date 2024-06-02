@@ -58,7 +58,7 @@ which has entry values ranging from $$0,1,\dots,2^{2n}-1$$.
 
 
 # Implementing Bayer Dithering 
-Bayer based image dithering is straightforward to implement for three channel images following the above description of the method. A working example implemented using JavaScript and the [p5.js](https://p5js.org/) graphics library. 
+Bayer based image dithering is straightforward to implement for (one and) three channel images following the above description of the method. A working example implemented using JavaScript and the [p5.js](https://p5js.org/), configured in VScode following [Oliver's guild](https://notes.osteele.com/tools/vscode/configuring-visual-studio-code-for-p5js-development-p5-server), graphics library is given blow. 
 
 ```js
 let c     = null; //number of grey levels
