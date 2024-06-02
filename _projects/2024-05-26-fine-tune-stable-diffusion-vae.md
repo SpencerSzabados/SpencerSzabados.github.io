@@ -21,7 +21,7 @@ scholar:
     bibliography: references.bib
 ---
 
-In a recent project, we (my coauthor and myself) needed to train a denoising diffusion bridge model on 512x512x3 patches from 2048x2048 fundus images take of human eyes. As it is prohibitively expensive, in terms of GPU memory, to train a diffusion model on such high resolutions with memory requirements scaling quadratically with image resolution when using a U-NET backbone, we turned to latent space diffusion models. In particular, we wished to use a fine-tuned version of the auto-encoder from Stable Diffusion. Unfortunately, it was somewhat of a length process finding exactly what training parameters worked well for fine-tuning Stable Diffusions VAE, and a to the point guild. As such, I have composed this short article, which is based on material from [capecape](https://wandb.ai/capecape/ddpm_clouds/reports/Using-Stable-Diffusion-VAE-to-encode-satellite-images--VmlldzozNDA2OTgx) and [cccntu](https://github.com/cccntu/fine-tune-models).
+In a recent project, we (my coauthor and myself) needed to train a denoising diffusion bridge model on 512x512x3 patches taken from 2048x2048 fundus images of human eyes. As GPU memory requirements for training a diffusion model on high resolutions with a U-NET backbone is prohibitive, scaling quadratically with image resolution, we turned to latent space diffusion models. In particular, we wished to use a fine-tuned version of the auto-encoder from Stable Diffusion. Unfortunately, it was somewhat of a lengthy process finding exactly what training parameters worked well for fine-tuning Stable Diffusions VAE, or a short guild with training scripts. To address this, I have written this short article and accompanying [github](https://github.com/SpencerSzabados/Fine-tune-Stable-Diffusion-VAE) repo, which is based on material from [capecape](https://wandb.ai/capecape/ddpm_clouds/reports/Using-Stable-Diffusion-VAE-to-encode-satellite-images--VmlldzozNDA2OTgx) and [cccntu](https://github.com/cccntu/fine-tune-models).
 
 ---
 
@@ -35,10 +35,8 @@ However, despite all the data these models have been trained on it is not guaran
 In an effort to save fellow researchers time, I provide a selection of training parameters -- which I have found to work well -- and a complete training script for fine-tuning Stable Diffusion (v1-4)'s variational auto-encoder.
 
 # Fine-tuning the Model
-The complete repository for fine-tuning can be found at [github](https://github.com/SpencerSzabados/Fine-tune-Stable-Diffusion-VAE). Consult the README.md for general usage. 
+The complete repository for fine-tuning can be found at [github](https://github.com/SpencerSzabados/Fine-tune-Stable-Diffusion-VAE). Consult the 'README.md' for general usage. 
 
-Here is an example 512x512x3 image patch from the [Fives dataset](https://www.nature.com/articles/s41597-022-01564-3) and corresponding reconstruction after being passed through the VAE. 
+Here is a side-by-side example of 512x512x3 image patch from the [Fives dataset](https://www.nature.com/articles/s41597-022-01564-3) and corresponding reconstruction after being passed through the VAE before and after 10k fine-tuning steps. While the two reconstructions (bottom images) appear quite similar, there is some artifacts along the edge of the first and along the vasculature that aren't as present in the second image. These differences might appear minor, but are significant enough to impact model performance when evaluated under Fréchet inception distance (FID).
 
-{% include figure.liquid loading="eager" path="assets/img/posts/image-dither/mike_c4d8color.png" class="img-fluid rounded z-depth-1" max-width="400px" center="true" %}
-
-After running 10k fine-tuning steps here is the result. 
+{% include figure.liquid loading="eager" path="assets/img/projects/fine-tune-sdvae/sdvae_step0_1000.png" class="img-fluid rounded z-depth-1" max-width="400px" center="true" %}
