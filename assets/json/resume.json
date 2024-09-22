@@ -46,7 +46,7 @@
         "url": "https://uwaterloo.ca/",
         "area": "Machine Learning and Generative Modeling",
         "studyType": "Masters of Mathematics in Computer Science",
-        "startDate": "2023",
+        "startDate": "2023-01",
         "endDate": "Present"
       },
     {
@@ -62,13 +62,22 @@
   "certificates": [
     {
       "name": "Front-End Web Development",
-      "date": "2020, June",
+      "date": "2020-06",
       "issuer": "Udemy",
       "url": "https://www.udemy.com/course/front-end-web-development/",
       "icon": "fa-solid fa-location-dot"
     }
   ],
   "work": [
+    {
+        "name": "Coastal Carbon",
+        "position": "Machine Learning Contractor",
+        "startDate": "2024-08",
+        "endDate": "Present",
+        "summary": "Design, testing (benchmark design), and implementation of latent diffusion models for remote sensing of multi-spectral satellite data. ",
+        "highlights": ["Latent diffusion models, Satellite imaging"],
+        "url": "https://coastalcarbon.ai/"
+    },
     {
         "name": "University of Waterloo",
         "position": "Teaching Assistant",
@@ -88,12 +97,21 @@
   ],
   "volunteer": [
     {
+        "organization": "University of Waterloo",
+        "position": "Directed Reading Program Mentor",
+        "startDate": "2024-05",
+        "endDate": "2023-08",
+        "summary": "The woman in mathematics directed reading program (DRP) is an initiative that aims to provide an opportunity for undergraduate students (mentees), who identify as women or underrepresented gender identities, to work with graduate students on a mathematical project. During this time I mentored two undergraduates on machine learning methods (latent space models) and measures of statistical depth (and combinatorial data depth) for out-of-distribution diction methods.",
+        "url": "https://uwaterloo.ca/women-in-mathematics/directed-reading-research-programs-drp"    
+    },
+    {
         "organization": "University of Manitoba: GADA Lab",
         "position": "Lab Organizer",
-        "url": "https://home.cs.umanitoba.ca/~gada/",
         "startDate": "2022-06",
         "endDate": "2023-01",
-        "summary": "Organizer for the Geometry Algorithms and Distributed Algorithms open problem solving sessions. These meetings were a platform for new students and other members of the lab to collaborate on open problems in the fields of Computational Geometry, Graph Algorithms, Distributed Algorithms, etc..."    }
+        "summary": "Organizer for the Geometry Algorithms and Distributed Algorithms open problem solving sessions. These meetings were a platform for new students and other members of the lab to collaborate on open problems in the fields of Computational Geometry, Graph Algorithms, Distributed Algorithms, etc...",
+        "url": "https://home.cs.umanitoba.ca/~gada/"    
+    }
   ],
   "awards": [
     {
@@ -127,7 +145,8 @@
   ],
   "publications": [
     {
-      "name": "See publications page."
+      "name": "See publications page.",
+      "url": "https://spencerszabados.github.io/publications/"
     }
   ],
   "skills": [

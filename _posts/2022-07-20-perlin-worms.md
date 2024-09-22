@@ -29,7 +29,7 @@ _Noise Worms_ are a procedurally generated illustrations of worm like objects, w
 {% include figure.liquid loading="eager" path="assets/img/posts/perlin-worms/perlin_worms_dist_bias_1.png" class="img-fluid rounded z-depth-1" max-width="400px" center="true" %}
 
 # Implementing Perlin noise
-Out of historical interest, we will be using a JavaScript port of Perlin's _Improved noise_ Java reference implementation, given in {% cite Perlin:2002 %}, which I implemented using the [p5.js](https://p5js.org/) graphics library with VScode configured according to [Oliver's guild](https://notes.osteele.com/tools/vscode/configuring-visual-studio-code-for-p5js-development-p5-server).
+Out of historical interest, we will be using a JavaScript port of Perlin's _Improved noise_ Java reference implementation, given in {% cite Perlin:2002 %}, which I implemented using the [p5.js](https://p5js.org/) graphics library.
 
 ```js
 //Port of Ken Perlin's 2002 Java Reference Implementation of Improved Noise
