@@ -24,7 +24,7 @@ There exists various articles online that discuss Bayer based image dithering, b
 ---
 
 # Overview
-Image dithering is a method that can be applied to reduce [colour banding](https://en.wikipedia.org/wiki/Colour_banding) present in low bit depth (pallet limited) images, and was commonly used as a post processing step used when it was not possible to print images using a sufficient number of colours (either due to mechanical limitations or cost) to avoid artifacts. 
+Image dithering is a method that can be applied to reduce [colour banding](https://en.wikipedia.org/wiki/Colour_banding) present in low bit depth (pallet limited) images, and was a common post processing step when it was not possible to print images using a sufficient number of colours (either due to mechanical limitations or cost) to avoid artifacts. 
 
 Next to noise (random) dithering, with simply randomly sample the image and apply a fixed threshold to each pixel value, ordered dithering methods are the next simplest to implement and use. Principle among these is Bayer dither, which is the technique discussed and implemented below.
 
