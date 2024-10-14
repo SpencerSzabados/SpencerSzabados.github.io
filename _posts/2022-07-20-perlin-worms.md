@@ -8,7 +8,7 @@ tags:
   - graphics
   - procedural_generation
 
-thumbnail: assets/img/posts/perlin-worms/perlin_worms_dist_bias_5.png
+thumbnail: assets/img/posts/perlin-worms/perlin_worms_dist_bias_1.png
 
 toc:
     sidebar: true
