@@ -3,7 +3,7 @@
     "name": "Spencer Szabados",
     "label": "Graduate Student",
     "image": "",
-    "email": "spencerszabados@gmail.com",
+    "email": "My full name at gmail dot com",
     "phone": "",
     "url": "https://SpencerSzabados.github.io",
     "summary": "Graduate student specializing in Applied Mathematics and Computer Science. Passionate about problem solving, with key areas of interest being Computational Mathematics and Statistics, Numerical Analysis, and Machine Learning; specifically, statistically based methods such as Sum Product Networks. Avid reader outside scientific disciplines, in topics relating to Human Decision Making, Finance, and a more casual obsession hard Sci-fi in general.",
@@ -47,7 +47,7 @@
         "area": "Machine Learning and Generative Modeling",
         "studyType": "Masters of Mathematics in Computer Science",
         "startDate": "2023-01",
-        "endDate": "Present"
+        "endDate": "2025-01"
       },
     {
       "institution": "University of Manitoba",
@@ -55,14 +55,14 @@
       "url": "https://umanitoba.ca/",
       "area": "Applied Mathematics and Computer Science",
       "studyType": "Bachelors of Science",
-      "startDate": "2016",
-      "endDate": "2022"
+      "startDate": "2016-07",
+      "endDate": "2022-02"
       }
   ],
   "certificates": [
     {
       "name": "Front-End Web Development",
-      "date": "2020-06",
+      "date": "2020.06",
       "issuer": "Udemy",
       "url": "https://www.udemy.com/course/front-end-web-development/",
       "icon": "fa-solid fa-location-dot"
@@ -70,24 +70,39 @@
   ],
   "work": [
     {
-        "name": "Coastal Carbon",
-        "position": "Machine Learning Contractor",
-        "startDate": "2024-08",
+        "tag": "coastalcarbon",
+        "name": "hum.ai (prev. Coastal Carbon)",
+        "contractType": "Contract, Full-time, Hybrid",
+        "position": "Machine Learning Engineer",
+        "startDate": "2025-01",
         "endDate": "Present",
+        "summary": "Promoted from Graduate Intern. Continuing design, testing, and implementation of latent diffusion models for remote sensing of multi-spectral satellite data.",
+        "highlights": ["Highly distributed model pipelines", "Multi-spectral data analysis", "Time series interpolation", "Reinforcement learning"],
+        "url": "https://hum.ai/"
+    },
+    {
+        "tag": "coastalcarbon",
+        "name": "Coastal Carbon",
+        "contractType": "Contract, Part-time, Hybrid",
+        "position": "Machine Learning Graduate Intern",
+        "startDate": "2024-08",
+        "endDate": "2025-01",
         "summary": "Design, testing (benchmark design), and implementation of latent diffusion models for remote sensing of multi-spectral satellite data. ",
-        "highlights": ["Latent diffusion models, Satellite imaging"],
+        "highlights": ["Latent space generative models", "Satellite imaging and processing"],
         "url": "https://coastalcarbon.ai/"
     },
     {
         "name": "University of Waterloo",
+        "contractType": "Contract, Part-time, Hybrid",
         "position": "Teaching Assistant",
         "startDate": "2023-01",
-        "endDate": "Present",
+        "endDate": "2024-07",
         "summary": "Teaching Assistant for CS116 - Introduction to Programming II, CS330 - Management Information Systems, CS335 - Computational Methods in Business and Finance. Responsible for the timely and accurate evaluation of individual works, covering the design and analysis of algorithms and data structures with adherence to established standards.",
         "highlights": ["Numerical integration of Stochastic Differential Equations for Finance."]
     },
     {
         "name": "University of Manitoba",
+        "contractType": "Contract, Part-time, Hybrid",
         "position": "Teaching Assistant",
         "startDate": "2022-01",
         "endDate": "2022-06",
@@ -99,8 +114,8 @@
     {
         "organization": "University of Waterloo",
         "position": "Directed Reading Program Mentor",
-        "startDate": "2024-05",
-        "endDate": "2023-08",
+        "startDate": "2023-08",
+        "endDate": "2024-05",
         "summary": "The woman in mathematics directed reading program (DRP) is an initiative that aims to provide an opportunity for undergraduate students (mentees), who identify as women or underrepresented gender identities, to work with graduate students on a mathematical project. During this time I mentored two undergraduates on machine learning methods (latent space models) and measures of statistical depth (and combinatorial data depth) for out-of-distribution diction methods.",
         "url": "https://uwaterloo.ca/women-in-mathematics/directed-reading-research-programs-drp"    
     },
@@ -115,11 +130,18 @@
   ],
   "awards": [
     {
+        "title": "Directed Reading Program Bursary",
+        "date": "2024-06",
+        "awarder": "University of Waterloo, Canada",
+        "url": "https://uwaterloo.ca/women-in-mathematics/past-drp-projects",
+        "summary": "Awarded for serving as a graduate mentor. ($1000)"
+    },
+    {
         "title": "Vector Institute Research Bursary",
-        "date": "2023-06",
+        "date": "2023-06, 2024-06",
         "awarder": "Vector Institute, Canada",
         "url": "https://uwaterloo.ca/graduate-studies-postdoctoral-affairs/awards/university-waterloo-graduate-scholarship",
-        "summary": "Awarded to full-time graduate studies at a Canadian educational institution during the Fall 2022 and/or Winter 2023 semesters in good academic standing and are supervised by a Vector Faculty Member. ($2000)"
+        "summary": "Awarded to full-time graduate studies at a Canadian educational institution during the Fall 2022 and/or Winter 2023 semesters in good academic standing and are supervised by a Vector Faculty Member. ($6000)"
       },
     {
       "title": "University of Waterloo Graduate Scholarship",
@@ -165,8 +187,10 @@
         "name": "Computer Science",
         "icon": "fa-solid fa-hashtag",
         "keywords": [
+          "R Programming (familiar)",
           "C Programming (comfortable)",
-          "Python Programming (experienced)"
+          "Python Programming (experienced)",
+          "Pytorch (library), Ray (library), Hydra (library)"
         ]
       }
   ],
