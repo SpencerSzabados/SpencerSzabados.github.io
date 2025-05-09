@@ -1,7 +1,7 @@
 ---
 title: Fine-Tune Stable Diffusion Auto-Encoder 
 description: A quick start guild to fine-tuning stable diffusions variational auto-encoder.
-doc type: Project post
+doc type: Blog post
 layout: post
 authors: Spencer Szabados
 date: 2024-05-26
@@ -10,7 +10,7 @@ tags:
   - graphics
   - machine_learning
 
-thumbnail: assets/img/posts/perlin-worms/perlin_worms_dist_bias_5.png
+thumbnail: assets/img/posts/fine-tune-sdvae/sdvae_step0_1000.png
 
 toc:
     sidebar: true
@@ -39,4 +39,4 @@ The complete repository for fine-tuning can be found at [github](https://github.
 
 Here is a side-by-side example of 512x512x3 image patch from the [Fives dataset](https://www.nature.com/articles/s41597-022-01564-3) and corresponding reconstruction after being passed through the VAE before and after 10k fine-tuning steps. While the two reconstructions (bottom images) appear quite similar, there is some artifacts along the edge of the first and along the vasculature that aren't as present in the second image. These differences might appear minor, but are significant enough to impact model performance when evaluated under Fréchet inception distance (FID).
 
-{% include figure.liquid loading="eager" path="assets/img/projects/fine-tune-sdvae/sdvae_step0_1000.png" class="img-fluid rounded z-depth-1" max-width="400px" center="true" %}
+{% include figure.liquid loading="eager" path="assets/img/posts/fine-tune-sdvae/sdvae_step0_1000.png" class="img-fluid rounded z-depth-1" max-width="400px" center="true" %}

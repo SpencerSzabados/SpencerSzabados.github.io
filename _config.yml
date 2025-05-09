@@ -123,7 +123,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: # blog_name will be displayed in your blog page
-blog_description: A place for posts that are neither projects or publications
+blog_description: A place for posts that are not publications
 permalink: /blog/:year/:title/
 
 # Pagination

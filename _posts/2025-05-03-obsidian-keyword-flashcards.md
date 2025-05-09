@@ -1,7 +1,7 @@
 ---
 title: Obsidian Keyword Based Flashcard Plugin
 description: Outline of my new obsidian flashcard plugin and note taking method.
-doc type: Project post
+doc type: Blog post
 layout: post
 authors: Spencer Szabados
 date: 2025-05-03
@@ -12,7 +12,7 @@ tags:
   - flashcards
   - markdown
 
-thumbnail: 
+thumbnail: assets/img/posts/obsidian-keyword-flashcards/obsidian_flashcard_back_final.png
 
 toc:
     sidebar: true
@@ -33,7 +33,7 @@ During the course of my masters degree, and the trailing edge of my undergraduat
 # My note taking format
 As most of my notes relate to topics in mathematics they tend to follow a templated format. For example here is a definition block from one of my notes:
 
-{% include figure.liquid loading="eager" path="assets/img/projects/obsidian-keyword-flashcards/obsidian_definition_note.png" class="img-fluid rounded z-depth-1" max-width="500px" center="true" %}
+{% include figure.liquid loading="eager" path="assets/img/posts/obsidian-keyword-flashcards/obsidian_definition_note.png" class="img-fluid rounded z-depth-1" max-width="500px" center="true" %}
 
 I structure most "atomic" elements of my notes in this way, a bold header with a tag prefix (e.g., method, theorem, example, problem, etc.) followed by a description and links to other related notes or blocks of text. 
 
@@ -44,8 +44,8 @@ To build this plugin, following the "vibe coding" ethos of 'be lazy and prompt m
 
 In the following few days, in my off time, I was able to quickly add support for markdown rendering (which required more manual intervention to get working), a configurable `.json` file that stores the parsing arguments, as well as a spaced repetition function for the notes. Here is what the final version ended up looking like:
 
-{% include figure.liquid loading="eager" path="assets/img/projects/obsidian-keyword-flashcards/obsidian_flashcard_front_final.png" class="img-fluid rounded z-depth-1" max-width="500px" center="true" %}
-{% include figure.liquid loading="eager" path="assets/img/projects/obsidian-keyword-flashcards/obsidian_flashcard_back_final.png" class="img-fluid rounded z-depth-1" max-width="500px" center="true" %}
+{% include figure.liquid loading="eager" path="assets/img/posts/obsidian-keyword-flashcards/obsidian_flashcard_front_final.png" class="img-fluid rounded z-depth-1" max-width="500px" center="true" %}
+{% include figure.liquid loading="eager" path="assets/img/posts/obsidian-keyword-flashcards/obsidian_flashcard_back_final.png" class="img-fluid rounded z-depth-1" max-width="500px" center="true" %}
 
 You can find the final plugin repository linked at the start of the page. The README has instructions on how to install and configure it for different flashcard headers etc.
 
