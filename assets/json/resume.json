@@ -6,7 +6,7 @@
     "email": "My full name at gmail dot com",
     "phone": "",
     "url": "https://SpencerSzabados.github.io",
-    "summary": "Graduate student specializing in Applied Mathematics and Computer Science. Passionate about problem solving, with key areas of interest being Computational Mathematics and Statistics, Numerical Analysis, and Machine Learning; specifically, statistically based methods such as Sum Product Networks. Avid reader outside scientific disciplines, in topics relating to Human Decision Making, Finance, and a more casual obsession hard Sci-fi in general.",
+    "summary": "Currently a Machine Learning Engineer at hum.ai, applying diffusion models to remote satellite sensing. I completed a Master's in Computer Science at the University of Waterloo with, Yaoliang Yu, focusing on generative models, and an undergrad in Applied Math and Computer Science at the University of Manitoba, where I worked on data depth in the GADA Lab. I enjoy tackling challenging problems, especially in computational math, applied stats, and numerical methods. Outside of work, I'm an avid reader, mostly on topics relating to human decision making, finance, and sci-fi.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -35,7 +35,8 @@
         "keywords": [
             "Diffusion Models",
             "Probabilistic Circuits",
-            "Generative Models"
+            "Probabilistic Modeling",
+            "Robotic Planning"
         ]
     }
   ],
@@ -148,11 +149,11 @@
       "date": "2023-01",
       "awarder": "University of Waterloo, Canada",
       "url": "https://uwaterloo.ca/graduate-studies-postdoctoral-affairs/awards/university-waterloo-graduate-scholarship",
-      "summary": "Awarded to graduate students registered full time in a Master's program with a minimum first-class (80%) cumulative average in their current program or over the last two full-time academic years. ($10,000)"
+      "summary": "Awarded to graduate students registered full time in a Master's program with a minimum first-class (80%) cumulative average in their current program or over the last two full-time academic years. ($4,000)"
     },
     {
         "title": "Faculty of Science Undergraduate Research Award",
-        "date": "2022-01",
+        "date": "2022-01, 2022-11",
         "awarder": "University of Manitoba, Canada, Stephane Durocher.",
         "url": "",
         "summary": "Awarded to undergraduate students to fund their research while working under the supervision of individual professors. This was awarded to me twice working under Stephane Durocher. ($10,000)"
