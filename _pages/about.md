@@ -8,8 +8,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>University of Waterloo</p>
-    <p>Waterloo, ON, Canada</p>
+    <p>Honolulu, Hawaii (ICML2023)</p>
 
 news: false # includes a list of news items
 latest_posts: true # includes a list of the newest posts
