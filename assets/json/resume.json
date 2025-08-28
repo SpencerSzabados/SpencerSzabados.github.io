@@ -6,13 +6,13 @@
     "email": "My full name at gmail dot com",
     "phone": "",
     "url": "https://SpencerSzabados.github.io",
-    "summary": "Currently a Machine Learning Engineer at hum.ai, applying diffusion models to remote satellite sensing. I completed a Master's in Computer Science at the University of Waterloo with, Yaoliang Yu, focusing on generative models, and an undergrad in Applied Math and Computer Science at the University of Manitoba, where I worked on data depth in the GADA Lab. I enjoy tackling challenging problems, especially in computational math, applied stats, and numerical methods. Outside of work, I'm an avid reader, mostly on topics relating to human decision making, finance, and sci-fi.",
+    "summary": "Incoming PhD student at UBC working under Frank Wood. I completed a Master's in Computer Science at the University of Waterloo with, Yaoliang Yu, focusing on generative models, and an undergrad in Applied Math and Computer Science at the University of Manitoba, where I worked on data depth in the GADA Lab. I enjoy tackling challenging problems, especially in computational math, applied stats, and numerical methods. Outside of work, I'm an avid reader, mostly on topics relating to human decision making, finance, and sci-fi.",
     "location": {
       "address": "",
       "postalCode": "",
-      "city": "Waterloo",
+      "city": "Vancouver",
       "countryCode": "Canada",
-      "region": "Ontario"
+      "region": "BC"
     },
     "profiles": [
     {}
@@ -42,8 +42,17 @@
   ],
   "education": [
     {
+        "institution": "University of British Columbia",
+        "location": "BC, Canada",
+        "url": "https://www.ubc.ca/",
+        "area": "Machine Learning and Generative Modeling",
+        "studyType": "Doctor of Philosophy in Computer Science",
+        "startDate": "2025-09",
+        "endDate": ""
+      },
+    {
         "institution": "University of Waterloo",
-        "location": "Ontario, Canada",
+        "location": "ON, Canada",
         "url": "https://uwaterloo.ca/",
         "area": "Machine Learning and Generative Modeling",
         "studyType": "Masters of Mathematics in Computer Science",
@@ -52,7 +61,7 @@
       },
     {
       "institution": "University of Manitoba",
-      "location": "Manitoba, Canada",
+      "location": "MB, Canada",
       "url": "https://umanitoba.ca/",
       "area": "Applied Mathematics and Computer Science",
       "studyType": "Bachelors of Science",
@@ -71,14 +80,23 @@
   ],
   "work": [
     {
+        "name": "Inverted AI",
+        "contractType": "Contract, part-time, Hybrid",
+        "position": "Research Graduate Intern",
+        "startDate": "2025-09",
+        "endDate": "",
+        "summary": "Research graduate intern for autonomous navigation and planning.",
+        "url": "https://www.inverted.ai/home"
+    },
+    {
         "tag": "coastalcarbon",
         "name": "hum.ai (prev. Coastal Carbon)",
         "contractType": "Contract, Full-time, Hybrid",
         "position": "Machine Learning Engineer",
         "startDate": "2025-01",
-        "endDate": "Present",
+        "endDate": "2025-08",
         "summary": "Promoted from Graduate Intern. Continuing design, testing, and implementation of latent diffusion models for remote sensing of multi-spectral satellite data.",
-        "highlights": ["Highly distributed model pipelines", "Multi-spectral data analysis", "Time series interpolation", "Reinforcement learning"],
+        "highlights": ["Highly distributed model pipelines", "Multi-spectral data analysis", "Time series interpolation"],
         "url": "https://hum.ai/"
     },
     {
@@ -130,6 +148,13 @@
     }
   ],
   "awards": [
+    {
+        "title": "President's Academic Excellence Award",
+        "date": "2025-09",
+        "awarder": "University of British Columbia, Canada",
+        "url": "https://www.grad.ubc.ca/awards/presidents-academic-excellence-initiative-phd-award",
+        "summary": "Awarded to graduate students registered full time in a PhD program with high academic standing. ($840)"
+    },
     {
         "title": "Directed Reading Program Bursary",
         "date": "2024-06",
