@@ -1,0 +1,67 @@
+# -----------------------------------------------------------------------------
+# Site configuration file.
+# Requires Hugo extended >= 0.122 (for the Goldmark passthrough extension).
+# -----------------------------------------------------------------------------
+
+baseURL = "https://SpencerSzabados.github.io/"
+languageCode = "en"
+title = "Spencer Szabados"
+
+# Sort posts by date modified using front-matter dates.
+# (Set to true to prefer the git commit date; requires a repo with commits.)
+enableGitInfo = false
+
+# Emit a clean, minimal set of output formats.
+disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
+
+[params]
+    # Author information.
+    author = "Spencer Szabados"
+    description = "The personal webpage of Spencer Szabados."
+    favicon = "🍁"
+
+    # Social/contact links.
+    email = "spencerszabados@gmail.com"
+    github = "SpencerSzabados"
+    scholar = "35D6WQsAAAAJ"
+
+    # CV (in static/pdf/) link.
+    cv = "/pdf/Szabados_Resume_CV_20260509.pdf"
+
+# Which field determines a page's "last modified" time, in priority order.
+[frontmatter]
+    lastmod = ["lastmod", "date", "publishDate"]
+
+# Primary navigation tabs.
+[menu]
+    [[menu.main]]
+        name = "about"
+        url = "/"
+        weight = 1
+    [[menu.main]]
+        name = "publications"
+        url = "/publications/"
+        weight = 2
+    [[menu.main]]
+        name = "blog"
+        url = "/posts/"
+        weight = 3
+
+[markup]
+    [markup.goldmark.renderer]
+        # Allow raw HTML in Markdown (figures, etc.).
+        unsafe = true
+    [markup.goldmark.extensions.passthrough]
+        # Pass math delimiters through untouched so KaTeX can render them.
+        enable = true
+    [markup.goldmark.extensions.passthrough.delimiters]
+        block = [["\\[", "\\]"], ["$$", "$$"]]
+        inline = [["\\(", "\\)"]]
+    [markup.highlight]
+        noClasses = false
+        tabWidth = 4
+    [markup.tableOfContents]
+        startLevel = 1
+        endLevel = 3
+        ordered = false

@@ -1,0 +1,19 @@
+{{- /* {{< cite "Perlin:1989" "Perlin:2002" >}} -- inline author-year citation.
+       Looks each key up in references.bib, links to the per-post reference list,
+       and records the key on the page so single.html can emit that list. */ -}}
+{{- $bib := partialCached "bib/parse.html" "assets/bib/references.bib" "assets/bib/references.bib" -}}
+{{- $cited := .Page.Store.Get "cited" | default slice -}}
+{{- $labels := slice -}}
+{{- range .Params -}}
+  {{- $key := . -}}
+  {{- $entry := index $bib.byId $key -}}
+  {{- if $entry -}}
+    {{- if not (in $cited $key) }}{{ $cited = $cited | append $key }}{{ end -}}
+    {{- $labels = $labels | append (printf `<a href="#ref-%s">%s</a>` (anchorize $key) $entry.label) -}}
+  {{- else -}}
+    {{- $labels = $labels | append $key -}}
+    {{- warnf "cite: unknown reference key %q" $key -}}
+  {{- end -}}
+{{- end -}}
+{{- .Page.Store.Set "cited" $cited -}}
+{{- printf `<span class="citation">(%s)</span>` (delimit $labels "; ") | safeHTML -}}

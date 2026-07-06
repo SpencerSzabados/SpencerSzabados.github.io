@@ -1,0 +1,14 @@
+{{- /* KaTeX for LaTeX math. The only JavaScript on the site; loaded only on
+       pages with `math: true` in their front matter.
+       Served from a CDN by default -- see README for vendoring it offline. */ -}}
+{{- $ver := "0.16.11" }}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@{{ $ver }}/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@{{ $ver }}/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@{{ $ver }}/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '\\[', right: '\\]', display: true},
+            {left: '\\(', right: '\\)', display: false}
+          ]
+        });"></script>

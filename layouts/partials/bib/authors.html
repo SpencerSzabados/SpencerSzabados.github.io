@@ -1,0 +1,19 @@
+{{- /* Input: a raw BibTeX author string ("Last, First and First Last ...").
+       Output: a slice of dicts {full, last}. */ -}}
+{{- $raw := . -}}
+{{- $out := slice -}}
+{{- range $a := split $raw " and " -}}
+  {{- $a = trim $a " \n\t" -}}
+  {{- if $a -}}
+    {{- if strings.Contains $a "," -}}
+      {{- $p := split $a "," -}}
+      {{- $last := trim (index $p 0) " " -}}
+      {{- $first := trim (index $p 1) " " -}}
+      {{- $out = $out | append (dict "full" (trim (printf "%s %s" $first $last) " ") "last" $last) -}}
+    {{- else -}}
+      {{- $w := split $a " " -}}
+      {{- $out = $out | append (dict "full" $a "last" (index $w (sub (len $w) 1))) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $out -}}

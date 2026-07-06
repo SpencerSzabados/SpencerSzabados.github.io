@@ -1,0 +1,37 @@
+{{ define "main" }}
+  <article>
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{- if eq .Section "posts" }}
+    <p class="meta">
+      {{ .Lastmod.Format "January 2, 2006" }}
+      {{- with .Params.tags }} /
+        {{- range . }} <a href="{{ "/posts/" | relURL }}">#{{ . }}</a>{{ end }}
+      {{- end }}
+    </p>
+    {{- end }}
+
+    {{- if .Params.toc }}
+    <div class="toc">
+      <strong>Contents</strong>
+      {{ .TableOfContents }}
+    </div>
+    {{- end }}
+
+    {{ .Content }}
+
+    {{- /* Emit a References section from any keys collected by {{< cite >}}. */ -}}
+    {{- $cited := .Store.Get "cited" }}
+    {{- with $cited }}
+    <h2>References</h2>
+    <div class="references">
+      <ol>
+        {{- $bib := partialCached "bib/parse.html" "assets/bib/references.bib" "assets/bib/references.bib" }}
+        {{- range . }}
+        {{- $entry := index $bib.byId . }}
+        <li id="ref-{{ . | anchorize }}">{{ partial "bib/format-entry.html" $entry }}</li>
+        {{- end }}
+      </ol>
+    </div>
+    {{- end }}
+  </article>
+{{ end }}

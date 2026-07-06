@@ -1,0 +1,25 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  {{- $bib := partialCached "bib/parse.html" "assets/bib/papers.bib" "assets/bib/papers.bib" }}
+  {{- /* Group by year, newest first. */ -}}
+  {{- $byYear := dict }}
+  {{- range $bib.list }}
+    {{- $y := .year | default "n.d." }}
+    {{- $cur := index $byYear $y | default slice }}
+    {{- $byYear = merge $byYear (dict $y ($cur | append .)) }}
+  {{- end }}
+  {{- $years := slice }}
+  {{- range $y, $_ := $byYear }}
+    {{- $years = $years | append $y }}
+  {{- end }}
+  {{- range $y := sort $years | collections.Reverse }}
+  <h2 class="pub-year">{{ $y }}</h2>
+  <div class="pub-list">
+    {{- range index $byYear $y }}
+    <div class="pub{{ if .selected }} selected{{ end }}">{{ partial "bib/format-entry.html" . }}</div>
+    {{- end }}
+  </div>
+  {{- end }}
+{{ end }}

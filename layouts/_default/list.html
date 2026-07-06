@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <ul class="list">
+    {{- range .RegularPages.ByLastmod.Reverse }}
+    <li>
+      <span class="date">{{ .Lastmod.Format "2006-01-02" }}</span> -
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{- end }}
+  </ul>
+{{ end }}

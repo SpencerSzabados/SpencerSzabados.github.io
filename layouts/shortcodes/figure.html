@@ -1,0 +1,9 @@
+{{- /* {{< figure src="/img/..." width="400px" center="true" caption="..." >}} */ -}}
+{{- $src := .Get "src" -}}
+{{- $width := .Get "width" -}}
+{{- $style := cond (ne $width "") (printf "max-width:%s;" $width) "" -}}
+<figure{{ if eq (.Get "center") "true" }} class="center"{{ end }}{{ with $style }} style="{{ . | safeCSS }}"{{ end }}>
+  <img src="{{ $src | relURL }}" alt="{{ .Get `alt` | default (.Get `caption`) }}"
+       loading="{{ .Get `loading` | default `lazy` }}">
+  {{- with .Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>

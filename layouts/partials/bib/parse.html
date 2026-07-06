@@ -1,0 +1,44 @@
+{{- /* Parse a BibTeX file directly into structured data.
+       Input: path to a .bib file (relative to the project root).
+       Output: dict { list: [entries in file order], byId: {key -> entry} }.
+
+       Each entry is a dict holding every BibTeX field (lower-cased) plus:
+         key, type, authors ([]{full,last}), label ("Perlin 1989"),
+         venue (booktitle|journal|series|school|publisher), selected (bool).
+
+       Wrap calls in `partialCached` so each .bib file is parsed only once. */ -}}
+{{- $raw := readFile . -}}
+{{- $raw = replaceRE `(?m)^@[Ss]tring.*$` "" $raw -}}
+{{- $list := slice -}}
+{{- $byId := dict -}}
+{{- range $chunk := findRE `(?s)@\w+\s*\{.*?\n\}` $raw -}}
+  {{- $type := "" -}}
+  {{- with (findRESubmatch `@(\w+)` $chunk) }}{{ $type = lower (index (index . 0) 1) }}{{ end -}}
+  {{- $key := "" -}}
+  {{- with (findRESubmatch `@\w+\s*\{\s*([^,]+),` $chunk) }}{{ $key = trim (index (index . 0) 1) " " }}{{ end -}}
+  {{- $f := dict -}}
+  {{- range $m := findRESubmatch `(?s)(\w+)\s*=\s*\{((?:[^{}]|\{[^{}]*\})*)\}` $chunk -}}
+    {{- $name := lower (index $m 1) -}}
+    {{- $val := index $m 2 -}}
+    {{- $val = replaceRE `[{}]` "" $val -}}
+    {{- $val = replaceRE `\\&` "&" $val -}}
+    {{- $val = trim (replaceRE `\s+` " " $val) " " -}}
+    {{- $f = merge $f (dict $name $val) -}}
+  {{- end -}}
+  {{- $authors := partial "bib/authors.html" (index $f "author" | default "") -}}
+  {{- $year := index $f "year" | default "" -}}
+  {{- $who := "" -}}
+  {{- $n := len $authors -}}
+  {{- if eq $n 1 }}{{ $who = (index $authors 0).last -}}
+  {{- else if eq $n 2 }}{{ $who = printf "%s & %s" (index $authors 0).last (index $authors 1).last -}}
+  {{- else if gt $n 2 }}{{ $who = printf "%s et al." (index $authors 0).last }}{{ end -}}
+  {{- $label := trim (printf "%s %s" $who $year) " " -}}
+  {{- $venue := index $f "booktitle" | default (index $f "journal") | default (index $f "series") | default (index $f "school") | default (index $f "publisher") | default "" -}}
+  {{- $selected := eq (lower (index $f "selected" | default "false")) "true" -}}
+  {{- $entry := merge $f (dict "key" $key "type" $type "authors" $authors "label" $label "venue" $venue "selected" $selected) -}}
+  {{- if $key -}}
+    {{- $list = $list | append $entry -}}
+    {{- $byId = merge $byId (dict $key $entry) -}}
+  {{- end -}}
+{{- end -}}
+{{- return (dict "list" $list "byId" $byId) -}}

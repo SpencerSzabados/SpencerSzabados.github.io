@@ -1,0 +1,26 @@
+# Hugo build output and caches (public/ is rebuilt and deployed by CI)
+/public/
+/resources/
+/resources/_gen/
+/.hugo_build.lock
+hugo_stats.json
+
+# Hugo modules / dependencies
+/node_modules/
+package-lock.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE files
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Temporary files
+*.tmp
+*.bak
+*.log

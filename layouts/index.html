@@ -1,0 +1,43 @@
+{{ define "main" }}
+  {{- with .Params.profile }}
+  <div class="profile">
+    <img src="{{ .image | relURL }}" alt="Spencer Szabados">
+    {{- with .caption }}<div class="meta" style="text-align:center">{{ . | markdownify }}</div>{{ end }}
+  </div>
+  {{- end }}
+
+  <h1>{{ .Title }}</h1>
+  {{- with .Params.subtitle }}<p class="meta">{{ . }}</p>{{ end }}
+
+  {{ .Content }}
+
+  <p class="social">
+    <a href="mailto:{{ site.Params.email }}">Email</a>
+    {{- with site.Params.github }} / <a href="https://github.com/{{ . }}">GitHub</a>{{ end }}
+    {{- with site.Params.scholar }} / <a href="https://scholar.google.com/citations?user={{ . }}">Google Scholar</a>{{ end }}
+    {{- with site.Params.cv }} / <a href="{{ . | relURL }}">CV</a>{{ end }}
+  </p>
+
+  {{- $bib := partialCached "bib/parse.html" "assets/bib/papers.bib" "assets/bib/papers.bib" }}
+  {{- $selected := where $bib.list "selected" true }}
+  {{- with $selected }}
+  <h2>Selected publications</h2>
+  <ul class="list" style="clear:both">
+    {{- range . }}
+    <li class="pub{{ if .selected }} selected{{ end }}">{{ partial "bib/format-entry.html" . }}</li>
+    {{- end }}
+  </ul>
+  <p class="meta"><a href="{{ "/publications/" | relURL }}">All publications</a></p>
+  {{- end }}
+
+  {{- $posts := where site.RegularPages "Section" "posts" }}
+  {{- with first 5 $posts.ByLastmod.Reverse }}
+  <h2>Latest posts</h2>
+  <ul class="list">
+    {{- range . }}
+    <li><span class="date">{{ .Lastmod.Format "2006-01-02" }}</span> - <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{- end }}
+  </ul>
+  <p class="meta"><a href="{{ "/posts/" | relURL }}">All posts</a></p>
+  {{- end }}
+{{ end }}

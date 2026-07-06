@@ -1,0 +1,16 @@
+{{- /* Render parsed BibTeX entry as an HTML fragment
+       from partials/bib/parse.html. */ -}}
+{{- $e := . -}}
+{{- $names := slice -}}
+{{- range $e.authors }}{{ $names = $names | append .full }}{{ end -}}
+<span class="authors">{{ delimit $names ", " ", and " }}</span>.
+<span class="title">{{ $e.title }}</span>.
+{{- with $e.venue }} <span class="venue">{{ . }}</span>,{{ end }}
+{{- with $e.volume }} vol. {{ . }},{{ end }}
+{{- with $e.pages }} pp. {{ . }},{{ end }}
+{{- with $e.year }} {{ . }}.{{ end }}
+<span class="links">
+  {{- with $e.pdf }} [<a href="{{ "/pdf/" | relURL }}{{ . }}">pdf</a>]{{ end }}
+  {{- with $e.arxiv }} [<a href="https://arxiv.org/abs/{{ . }}">arXiv</a>]{{ end }}
+  {{- with $e.url }} [<a href="{{ . }}">link</a>]{{ end }}
+</span>
