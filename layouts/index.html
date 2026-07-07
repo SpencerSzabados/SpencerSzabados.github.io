@@ -35,7 +35,7 @@
   <h2>Latest posts</h2>
   <ul class="list">
     {{- range . }}
-    <li><span class="date">{{ .Lastmod.Format "2006-01-02" }}</span> - <a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    <li><span class="date">{{ .Lastmod.Format "2006-01-02" }} - </span><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
     {{- end }}
   </ul>
   <p class="meta"><a href="{{ "/posts/" | relURL }}">All posts</a></p>

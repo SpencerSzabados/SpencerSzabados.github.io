@@ -104,5 +104,8 @@ footer {
 .references { font-size: 0.9rem; }
 
 @media (max-width: 32rem) {
-  .profile { float: none; width: 100%; max-width: 100%; margin-bottom: 1rem; }
+  .profile { float: none; width: 100%; max-width: 100%; margin: 0 auto 1rem; text-align: center; }
+  .profile img { margin: 0 auto; }
+  /* Hide the date so post titles don't wrap under it on narrow screens */
+  .list .date { display: none; }
 }
